@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.image.*?>
+
+<StackPane fx:controller="MainWindow" xmlns:fx="http://javafx.com/fxml"
+    stylesheets="@MainWindow.css"
+    alignment="CENTER" prefHeight="740" prefWidth="560">
+
+    <!-- Main Menu -->
+    <VBox fx:id="vboxMainMenu" spacing="0" alignment="TOP_CENTER">
+        <ImageView preserveRatio="true" fitHeight="500">
+            <image>
+                <Image url="@media/Logo.png" />
+            </image>
+        </ImageView>
+
+        <VBox alignment="BOTTOM_CENTER" spacing="10" minHeight="225" styleClass="nice-buttons">
+            <Button onAction="#onStartClicked" text="_Start Game" defaultButton="true" />
+            <Button onAction="#onAboutClicked" text="_About Game" />
+            <Button onAction="#onHelpClicked" text="_Help" />
+        </VBox>
+    </VBox>
+
+    <!-- About Screen (initially hidden) -->
+    <VBox fx:id="vboxAboutScreen" spacing="10" alignment="CENTER" visible="false" minHeight="700"
+        minWidth="520" styleClass="additional-screens" opacity="0">
+        <Label text="About Game" translateY="-100" styleClass="labels" />
+        <TextArea fx:id="txtAreaAbout" editable="false" wrapText="true" prefWidth="520" prefHeight="400" styleClass="text-area" />
+        <Button onAction="#onCloseAboutClicked" text="Close" styleClass="nice-buttons" />
+    </VBox>
+
+    <!-- Help Screen (initially hidden) -->
+    <VBox fx:id="vboxHelpScreen" spacing="10" alignment="CENTER" visible="false" minHeight="700"
+        minWidth="520" styleClass="additional-screens" opacity="0">
+        <Label text="Game Help" translateY="-100" styleClass="labels" />
+        <TextArea fx:id="txtAreaHelp" editable="false" wrapText="true" prefWidth="520" prefHeight="400" styleClass="text-area" />
+        <Button onAction="#onCloseHelpClicked" text="Close" />
+    </VBox>
+
+</StackPane>

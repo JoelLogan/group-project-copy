@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.chart.*?>
+
+<StackPane fx:controller="MainWindow" xmlns:fx="http://javafx.com/fxml"
+    stylesheets="@MainWindow.css" prefHeight="560" prefWidth="1050" onKeyPressed="#onKeyPressed">
+
+    <!-- Opening Screen -->
+    <VBox alignment="CENTER">
+        <Label text="BJU Beats Designer" styleClass="title" />
+        <Region minHeight="30" />
+        <HBox spacing="10" alignment="CENTER">
+            <Button onAction="#onNewSong" text="New Song" styleClass="nice-buttons" />
+            <Button onAction="#onOpenSong" text="Open Existing Song" styleClass="nice-buttons" />
+        </HBox>
+        <Region minHeight="50" />
+        <CheckBox onAction="#onNoteWarnChecked" text="Note Length Warning" styleClass="editor-titles" selected="True" />
+    </VBox>
+
+    <!-- Editor Screen -->
+    <VBox fx:id="vBoxEditorScreen" alignment="TOP_LEFT" visible="false"
+        styleClass="additional-screens">
+        <HBox>
+            <Label fx:id="lblName" text="Name: " styleClass="editor-titles" />
+            <Region minWidth="100" />
+            <Label text="First Point: " styleClass="small-text" />
+            <Label fx:id="lblFirstPoint" styleClass="small-text" />
+            <Region minWidth="30" />
+            <Label text="Second Point: " styleClass="small-text" />
+            <Label fx:id="lblSecondPoint" styleClass="small-text" />
+            <Region minWidth="30" />
+            <Label text="Current Pos: " styleClass="small-text" />
+            <Label fx:id="lblCurrentPos" styleClass="small-text" />
+        </HBox>
+        <StackPane>
+            <VBox fx:id="vBoxOpenButton" minHeight="500" maxHeight="500" alignment="CENTER"
+                visible="false">
+                <Button onAction="#onOpenMediaFile" text="Click To Open Song"
+                    styleClass="nice-buttons" />
+            </VBox>
+            <VBox fx:id="vBoxEditorBox" minHeight="500" maxHeight="500" alignment="CENTER"
+                visible="false" styleClass="scroll-area">
+            </VBox>
+        </StackPane>
+        <Label fx:id="lblSongName" text="Track Name: " styleClass="editor-titles" />
+        <HBox>
+            <Button onAction="#onSaveFile" text="Save" />
+            <Region minWidth="100" />
+            <Label
+                text="To add a note, click the two endpoints of the note on the timeline. To remove a note, hold CTRL and click."
+                styleClass="small-text" />
+            <Region minWidth="30" />
+            <VBox alignment="CENTER">
+                <Label text="Song Difficulty" styleClass="small-text" />
+                <ComboBox fx:id="cBoxSongDifficulty" onAction="#onChangeDifficulty"
+                    styleClass="small-text" />
+            </VBox>
+        </HBox>
+    </VBox>
+
+</StackPane>

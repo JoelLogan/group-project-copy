@@ -1,0 +1,75 @@
+.root {
+    padding: 0;
+    -fx-padding: 0;
+    background-color: white;
+    -fx-background-color: white;
+}
+
+.nice-buttons {
+    font-size: 32px;
+    -fx-font-size: 32px;
+    font-family: "Stencil";
+    -fx-font-family: "Stencil";
+    -fx-effect: dropshadow(gaussian, gray, 5, 0.5, 8, 8);
+}
+
+.nice-buttons-smaller {
+    font-size: 16px;
+    -fx-font-size: 16px;
+    font-family: "Stencil";
+    -fx-font-family: "Stencil";
+    -fx-effect: dropshadow(gaussian, gray, 5, 0.5, 8, 8);
+}
+
+.nice-buttons-bigger {
+    font-size: 48px;
+    -fx-font-size: 48px;
+    font-family: "Stencil";
+    -fx-font-family: "Stencil";
+    -fx-effect: dropshadow(gaussian, gray, 5, 0.5, 8, 8);
+}
+
+.additional-screens {
+    background-color: white;
+    -fx-background-color: white;
+    font-size: 48px;
+    -fx-font-size: 48px;
+    font-family: "Stencil";
+    -fx-font-family: "Stencil";
+    -fx-effect: dropshadow(gaussian, gray, 5, 0.5, 8, 8);
+}
+
+.game-screen {
+    font-size: 48px;
+    -fx-font-size: 48px;
+    font-family: "Stencil";
+    -fx-font-family: "Stencil";
+}
+
+.score {
+    font-size: 48px;
+    -fx-font-size: 48px;
+    font-family: "Stencil";
+    -fx-font-family: "Stencil";
+}
+
+.level-completion {
+    font-size: 32px;
+    -fx-font-size: 32px;
+    font-family: "Stencil";
+    -fx-font-family: "Stencil";
+}
+
+.level-name {
+    font-size: 12px;
+    -fx-font-size: 12px;
+    font-family: "Stencil";
+    -fx-font-family: "Stencil";
+}
+
+.powerups {
+    padding: 5;
+    -fx-padding: 5;
+    font-size: 12px;
+    -fx-font-size: 12px;
+}

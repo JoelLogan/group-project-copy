@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.image.*?>
+
+<StackPane fx:controller="GameWindow" xmlns:fx="http://javafx.com/fxml"
+    stylesheets="@GameWindow.css"
+    alignment="CENTER" prefHeight="740" prefWidth="560" onKeyPressed="#onKeyPressed"
+    onKeyReleased="#onKeyReleased">
+
+    <!-- Main Menu -->
+    <VBox fx:id="vBoxMainMenu" spacing="0" alignment="TOP_CENTER">
+        <ImageView preserveRatio="true" fitHeight="500">
+            <image>
+                <Image url="@media/Logo.png" />
+            </image>
+        </ImageView>
+
+        <VBox fx:id="vBoxMainMenuButtons" alignment="TOP_CENTER" spacing="10" minHeight="225" translateY="-25" >
+            <Button onAction="#onViewLevels" text="_Levels" defaultButton="true" styleClass="nice-buttons" />
+            <Button onAction="#onExitGame" text="_Exit" styleClass="nice-buttons" />
+            <Region minHeight="10" />
+            <CheckBox fx:id="chkCheatMode" onAction="#onCheatChecked" text="Cheat Mode" styleClass="level-completion" />
+        </VBox>
+    </VBox>
+
+    <!-- Level Menu -->
+    <VBox fx:id="vBoxLevelContainer" visible="false" styleClass="additional-screens" opacity="0"
+        alignment="TOP_CENTER">
+        <ImageView preserveRatio="true" fitHeight="200">
+            <image>
+                <Image url="@media/Logo.png" />
+            </image>
+        </ImageView>
+        <Label text="Levels" />
+        <HBox spacing="5" styleClass="nice-buttons" alignment="CENTER" minHeight="100">
+            <Button onAction="#onLeftClicked" text="&#60;" />
+            <ScrollPane fx:id="spLevels" hbarPolicy="NEVER" vbarPolicy="NEVER" fitToHeight="true">
+                <content>
+                    <HBox fx:id="hBoxLevels" spacing="0" minHeight="100" />
+                </content>
+            </ScrollPane>
+            <Button onAction="#onRightClicked" text=">" />
+        </HBox>
+        <Region minHeight="10" />
+        <Label fx:id="lblLevelDifficulty" text="Difficulty: " styleClass="level-completion" />
+        <Label fx:id="lblLevelHighScore" text="High Score: " styleClass="level-completion" />
+        <Button onAction="#onBackLevelClicked" text="_Back" translateY="75"
+            styleClass="nice-buttons-bigger" />
+    </VBox>
+
+    <!-- Game View -->
+    <StackPane fx:id="stkGameContainer" visible="false" styleClass="game-screen" opacity="0">
+        <VBox fx:id="vBoxGameSubscene" />
+        <VBox fx:id="vBoxGameHUDContainer" styleClass="game-screen" alignment="TOP_CENTER">
+            <HBox minWidth="560" minHeight="148" maxHeight="148" spacing="5">
+                <VBox minWidth="186" maxWidth="186">
+                    <Label fx:id="lblScore" text="0" styleClass="score" />
+                    <Label fx:id="lblLevelCompletion" text="0%" styleClass="level-completion" />
+                </VBox>
+                <VBox fx:id="vBoxInGameLogo" minHeight="148" maxHeight="148" minWidth="186"
+                    maxWidth="186" alignment="TOP_CENTER">
+                    <ImageView preserveRatio="true" fitHeight="125" translateY="-15">
+                        <image>
+                            <Image url="@media/Logo.png" />
+                        </image>
+                    </ImageView>
+                    <Label fx:id="lblInGameLevelName" styleClass="level-name" translateY="-40"
+                        wrapText="true" />
+                </VBox>
+                <VBox alignment="TOP_CENTER">
+                    <Label text="Power-Ups" styleClass="level-name" />
+                    <HBox spacing="5">
+                        <Button fx:id="btnPowerup1" userData="0" disable="true" minHeight="100" maxHeight="100" minWidth="55"
+                            maxWidth="55" styleClass="powerups" opacity="0.2" />
+                        <Button fx:id="btnPowerup2" disable="true" minHeight="100" maxHeight="100" minWidth="55"
+                            maxWidth="55" userData="1" styleClass="powerups" opacity="0.2" />
+                        <Button fx:id="btnPowerup3" disable="true" minHeight="100" maxHeight="100" minWidth="55"
+                            maxWidth="55" userData="2" styleClass="powerups" opacity="0.2" />
+                    </HBox>
+                </VBox>
+            </HBox>
+        </VBox>
+    </StackPane>
+
+    <!-- Pause Menu -->
+    <VBox fx:id="vBoxPauseMenu" visible="false" styleClass="additional-screens" opacity="0.5"
+        alignment="CENTER">
+        <Label text="Game Paused" />
+        <Button onAction="#onExitLevel" text="_Exit" translateY="75"
+            styleClass="nice-buttons-bigger" />
+        <Button onAction="#onSaveGameState" text="_Save For Later" styleClass="nice-buttons" translateY="100" />
+    </VBox>
+
+    <!-- Score Menu -->
+    <VBox fx:id="vBoxScoreMenu" visible="false" styleClass="additional-screens" opacity="0"
+        alignment="CENTER">
+        <Label text="Level Complete!" translateY="-50" />
+        <Label fx:id="lblFinalScore" text="Final Score: " />
+        <Button onAction="#onExitLevel" text="_Done" translateY="75"
+            styleClass="nice-buttons-bigger" />
+    </VBox>
+</StackPane>

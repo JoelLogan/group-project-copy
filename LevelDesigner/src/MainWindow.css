@@ -1,0 +1,46 @@
+.root {
+    padding: 10;
+    -fx-padding: 0;
+    background-color: white;
+    -fx-background-color: white;
+    font-family: "Stencil";
+    -fx-font-family: "Stencil";
+    font-size: 36px;
+    -fx-font-size: 36px;
+}
+
+.nice-buttons {
+    font-size: 36px;
+    -fx-font-size: 36px;
+    font-family: "Stencil";
+    -fx-font-family: "Stencil";
+    -fx-effect: dropshadow(gaussian, gray, 5, 0.5, 8, 8);
+}
+
+.title {
+    font-size: 48px;
+    -fx-font-size: 48px;
+}
+
+.editor-titles {
+    font-size: 24px;
+    -fx-font-size: 24px;
+}
+
+.small-text {
+    font-size: 12px;
+    -fx-font-size: 12px;
+}
+
+.additional-screens {
+    background-color: white;
+    -fx-background-color: white;
+    font-size: 36px;
+    -fx-font-size: 36px;
+    font-family: "Stencil";
+    -fx-font-family: "Stencil";
+}
+
+.scroll-area .scroll-bar:horizontal {
+    -fx-pref-height: 25;
+}
